@@ -8,7 +8,7 @@ export function BookmarkSidebar({currentBookmarksTagCounts, handleModalCloseClic
         <aside className="bookmark-manager-sidebar-menu">
                 <header className="bookmark-manager-sidebar-menu__header">
                     <div className="bookmark-manager-sidebar-menu__headline-logo-wrapper"> 
-                            <img src="/public/images/bookmark-manager-logo.svg" className="bookmark-manager-sidebar-menu__logo" alt="bookmark manager logo"/>
+                            <img src="/images/bookmark-manager-logo.svg" className="bookmark-manager-sidebar-menu__logo" alt="bookmark manager logo"/>
                             <h2 className="bookmark-manager-sidebar-menu__headline">Bookmark Manager</h2>
                     </div>
                     <button className="bookmark-manager-sidebar-menu__close-button" onClick={handleModalCloseClick}><img src="/images/icon-close.svg" alt="close icon"/></button>
