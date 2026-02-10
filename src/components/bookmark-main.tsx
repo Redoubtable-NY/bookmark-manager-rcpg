@@ -1,7 +1,7 @@
 import type { BookMarkDataType } from "../App"
-import type { JSX, RefObject, MouseEvent } from "react"
+import type { JSX, RefObject} from "react"
 
-export function Main({currentBookmarksData, selectedBookmarkTags, currentSearchContents, handleDelete, dialogDeleteRef, handleCancelDelete, handleConfirmDelete}:{currentBookmarksData:BookMarkDataType[], selectedBookmarkTags:string[], currentSearchContents:string, handleDelete:(e:MouseEvent<HTMLButtonElement>, bookmarkID:string) => void, dialogDeleteRef:RefObject<HTMLDialogElement | null>, handleCancelDelete:()=> void, handleConfirmDelete:() => void}){
+export function Main({currentBookmarksData, selectedBookmarkTags, currentSearchContents, handleDelete, dialogDeleteRef, handleCancelDelete, handleConfirmDelete}:{currentBookmarksData:BookMarkDataType[], selectedBookmarkTags:string[], currentSearchContents:string, handleDelete:(bookmarkID:string) => void, dialogDeleteRef:RefObject<HTMLDialogElement | null>, handleCancelDelete:()=> void, handleConfirmDelete:() => void}){
     
     const filteredBookMarksData = selectedBookmarkTags.length >= 1 ? currentBookmarksData.filter((Bookmark) => {
         const matchedTags = Bookmark.tags.filter((tag) => selectedBookmarkTags.includes(tag))
@@ -48,7 +48,7 @@ export function Main({currentBookmarksData, selectedBookmarkTags, currentSearchC
                             aria-label="bookmark actions menu">
                                 <a className="bookmark-main_popover-link" href={bookmark.url} tabIndex={0}><img className="bookmark-main_popover-link-image" src="/images/icon-visit.svg" alt="visit icon"/>Visit</a>
                                 <button className="bookmark-main_popover-button"
-                                data-bookmark-id={bookmark.id} onClick={(e) => handleDelete(e, bookmark.id)} 
+                                data-bookmark-id={bookmark.id} onClick={() => handleDelete(bookmark.id)} 
                                 ><img src="/images/icon-delete.svg" alt="delete icon"/>Delete</button>
                             </section>
                     </dialog>

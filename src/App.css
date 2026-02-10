@@ -182,6 +182,7 @@ body:has(.mobile-modal[open]){
     border-radius: .5rem;
     font-size: 1rem;
     font-weight: 600;
+    flex-grow: 1;
     cursor: pointer;
 }
 

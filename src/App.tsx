@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import type { ChangeEvent, MouseEvent } from 'react'
+import type { ChangeEvent } from 'react'
 import { Header } from './components/bookmark-manager-header'
 import { MobileModalMenu } from './components/bookmark-manager-dialog'
 import { BookmarkSidebar } from './components/bookmark-sidebar-menu'
@@ -128,12 +128,11 @@ function App() {
     }
   }
 
-  function handleDelete(e:MouseEvent<HTMLButtonElement>, bookmarkID:string){
+  function handleDelete(bookmarkID:string){
     deletedBookIdStorageRef.current = ""
     if(dialogDeleteRef.current){
       dialogDeleteRef.current.showModal()
       deletedBookIdStorageRef.current = bookmarkID
-      // deletedBookIdStorageRef.current = e.currentTarget.attributes[1].value
     }
   }
 
